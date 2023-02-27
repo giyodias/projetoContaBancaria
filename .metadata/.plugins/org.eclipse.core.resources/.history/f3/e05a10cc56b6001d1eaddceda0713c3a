@@ -12,7 +12,13 @@ public class Menu {
 
 	public static void main(String[] args) {
 		
-		
+		public static void keyPress() {
+			try {
+				System.out.println(Cores.TEXT_RESET + "\nPressione Enter para continuar...");
+				System.in.read();
+			}catch(IOException e) {
+				System.out.println("Você pressionou uma tecla diferente de Enter.");
+			}
 		
 		
 		//teste Classe Conta
@@ -156,21 +162,10 @@ public class Menu {
 			System.out.println("                    Tente novamente.                 ");
 			System.out.println("                                                     ");
 			keyPress();
-			break;
 		}
-		
-		
-		}	
-}
-
-public static void keyPress() {
-	try {
-		System.out.println(Cores.TEXT_RESET + "\nPressione Enter para continuar...");
-		System.in.read();
-	}catch(IOException e) {
-		System.out.println("Você pressionou uma tecla diferente de Enter.");
-	}
+		leia.close();
+		}
+	
+	
 }
 }
-
-

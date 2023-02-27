@@ -158,7 +158,7 @@ public class Menu {
 			keyPress();
 			break;
 		}
-		
+		leia.close();
 		
 		}	
 }

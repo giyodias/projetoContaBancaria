@@ -1,7 +1,5 @@
 package conta;
 
-import java.io.IOException;
-import java.util.InputMismatchException;
 import java.util.Scanner;
 import conta.model.Conta;
 import conta.util.Cores;
@@ -11,9 +9,6 @@ import conta.model.ContaPoupanca;
 public class Menu {
 
 	public static void main(String[] args) {
-		
-		
-		
 		
 		//teste Classe Conta
 		Conta c1 = new Conta(1, 123, 1, "Adriana Novaes", 10000.0f);
@@ -67,14 +62,7 @@ public class Menu {
 		System.out.println("-----------------------------------------------------");
 		System.out.println(Cores.TEXT_WHITE
 					       + "Digite a opção desejada:                             ");
-		
-		try {
 		opcao = leia.nextInt();
-		}catch(InputMismatchException e) {
-			System.out.println("Digite valores inteiros!");
-			leia.nextLine();
-			opcao = 0;
-		}
 		
 		switch(opcao) {
 		case 1:
@@ -83,7 +71,6 @@ public class Menu {
 				               +  "                      Criar conta                    ");
 			System.out.println(Cores.TEXT_WHITE
 					           + "                                                     ");
-			keyPress();
 			break;
 		case 2:
 			System.out.println("                                                     ");
@@ -91,7 +78,6 @@ public class Menu {
 					           + "                Listar todas as contas               ");
 			System.out.println(Cores.TEXT_WHITE
 					           + "                                                     ");
-			keyPress();
 			break;
 		case 3:
 			System.out.println("                                                     ");
@@ -99,7 +85,6 @@ public class Menu {
 					           + "               Buscar conta por número               ");
 			System.out.println(Cores.TEXT_WHITE
 					           + "                                                     ");
-			keyPress();
 			break;
 		case 4:
 			System.out.println("                                                     ");
@@ -107,7 +92,6 @@ public class Menu {
 					           + "               Atualizar dados da conta              ");
 			System.out.println(Cores.TEXT_WHITE
 					           + "                                                     ");
-			keyPress();
 			break;
 		case 5:
 			System.out.println("                                                     ");
@@ -115,7 +99,6 @@ public class Menu {
 					           + "                    Apagar conta                     ");
 			System.out.println(Cores.TEXT_WHITE 
 					           + "                                                     ");
-			keyPress();
 			break;
 		case 6:
 			System.out.println("                                                     ");
@@ -123,7 +106,6 @@ public class Menu {
 					           + "                        Sacar                        ");
 			System.out.println(Cores.TEXT_WHITE 
 					           + "                                                     ");
-			keyPress();
 			break;
 		case 7:
 			System.out.println("                                                     ");
@@ -131,7 +113,6 @@ public class Menu {
 					           + "                      Depositar                      ");
 			System.out.println(Cores.TEXT_WHITE 
 					           + "                                                     ");
-			keyPress();
 			break;
 		case 8:
 			System.out.println("                                                     ");
@@ -139,7 +120,6 @@ public class Menu {
 					           + "                 Transferir valores                  ");
 			System.out.println(Cores.TEXT_WHITE
 					           + "                                                     ");
-			keyPress();
 			break;
 		case 9:
 			System.out.println("                                                     ");
@@ -147,7 +127,6 @@ public class Menu {
 					           + "                 Fechando o sistema...               ");
 			System.out.println("                                                     ");
 			System.exit(0);
-			keyPress();
 			break;
 		default:
 			System.out.println("                                                     ");
@@ -155,22 +134,9 @@ public class Menu {
 					           + "                    Opção inválida.                  ");
 			System.out.println("                    Tente novamente.                 ");
 			System.out.println("                                                     ");
-			keyPress();
-			break;
 		}
-		
-		
-		}	
-}
-
-public static void keyPress() {
-	try {
-		System.out.println(Cores.TEXT_RESET + "\nPressione Enter para continuar...");
-		System.in.read();
-	}catch(IOException e) {
-		System.out.println("Você pressionou uma tecla diferente de Enter.");
+		leia.close();
+		}
+	
 	}
 }
-}
-
-
